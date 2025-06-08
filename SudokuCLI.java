@@ -22,13 +22,18 @@ public class SudokuCLI {
             Board.printBoard();
             System.out.print("\nEnter Co-ordinates: ");
             guess = input.nextLine().toUpperCase();
-
+            clearScreen();
             if (guess.equals("Q")) {
                 System.out.println("Thanks for Playing!");
                 running = false;
             }
+            
         }
         input.close();
     }
     
+    public static void clearScreen() {  
+        System.out.print("\033[H\033[2J");  
+        System.out.flush();  
+    }  
 }

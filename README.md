@@ -15,7 +15,6 @@ script just prints the board and allows the user to quit.
 
 - Gameplay (i know, right?)
 - Colour output
-- Screen Refresh
 - Main Menu
 - Score Stats saver/viewer
 - Timer

@@ -5,10 +5,12 @@ public class SudokuCLI {
     public static void main(String[] args) {
         // Game Loop Controls
         boolean running = true;
-        String guess;
+        String input;
+        String usr_msg = "";
 
         // interface crap
-        Scanner input = new Scanner(System.in);
+        Scanner sys_in = new Scanner(System.in);
+        clearScreen();
 
         System.out.println("========================");
         System.out.println("|| Welcome To Sudoku! ||");
@@ -20,18 +22,31 @@ public class SudokuCLI {
 
         while (running) {
             Board.printBoard();
-            System.out.print("\nEnter Co-ordinates: ");
-            guess = input.nextLine().toUpperCase();
-            clearScreen();
-            if (guess.equals("Q")) {
-                System.out.println("Thanks for Playing!");
-                running = false;
+            System.out.println(usr_msg);
+            usr_msg = "";
+
+            System.out.print("Enter Co-ordinates: ");
+            input = sys_in.nextLine().toUpperCase();
+            if (input.equals("Q")) {
+                running = false; 
             } else {
-                
+                // parse input
+                // after, prompt for value input
             }
-            
+            clearScreen();
         }
-        input.close();
+
+
+        sys_in.close();
+        System.out.println("Thanks for Playing!");
+    }
+
+    public static int[] parseCo(String in) {
+        String[] input = in.split(",");
+        int[] result = new int[2];
+        // check for bracketing
+        // else, parse as normal.
+        return result;
     }
 
     public static void clearScreen() {  

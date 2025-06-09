@@ -215,12 +215,12 @@ public class Board {
 
     // generates a random value in list
     static int findValidRand(int[] in){
-        int ret = 0;
-        while(ret == 0){
+        int result = 0;
+        while(result == 0){
             int tst = randInt();
-            if(includes(tst, in)) ret = tst;
+            if(includes(tst, in)) result = tst;
         }
-        return ret;
+        return result;
     }
 
     // prints the sudoku board to the console
@@ -236,7 +236,7 @@ public class Board {
                 if(j == 8) System.out.println("||");
             }
         }
-        System.out.println("\n      1 2 3   4 5 6   7 8 9");
+        System.out.println("\n      1 2 3   4 5 6   7 8 9\n");
     }
 
 }

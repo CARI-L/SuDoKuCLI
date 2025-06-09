@@ -225,16 +225,18 @@ public class Board {
 
     // prints the sudoku board to the console
     static void printBoard(){
+        System.out.println();
         for(int i = 0; i < 9; i++){
-            if(i == 3 || i == 6) System.out.println("=========================");
+            if(i == 3 || i == 6) System.out.println("    =========================");
             for(int j = 0; j < 9; j++){
-                if(j == 0) System.out.print("|");
+                if(j == 0) System.out.printf("%d   |", (9 - i));
                 if(j == 3 || j == 6) System.out.print("||");
                 if(values[i][j] == 0) System.out.print("| ");
                 else System.out.printf("|%d", values[i][j]);
                 if(j == 8) System.out.println("||");
             }
         }
+        System.out.println("\n      1 2 3   4 5 6   7 8 9");
     }
 
 }

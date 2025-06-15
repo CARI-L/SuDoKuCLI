@@ -3,9 +3,11 @@ import java.util.Arrays;
 public class Board {
     static int[][] values;
     static int[][] solution;
+    static int[][] base;
 
     static void generateRandomBoard(){
         values = new int[9][9];     // initialize empty board
+        base = new int[9][9];     // initialize empty board
 
         while(!boardFull()){
             int x = randInt() - 1;
@@ -41,6 +43,11 @@ public class Board {
             // if more than 1 unique solution exists, restore value
             if(!(Arrays.deepEquals(solve(), solve()))){
                 values[y][x] = val;
+            }
+        }
+        for(int i = 0; i < 9; i++){
+            for(int j = 0; j < 9; j++){
+                base[i][j] = values[i][j];
             }
         }
     }
@@ -120,7 +127,7 @@ public class Board {
     }
 
     // Get all valid numbers for a cell
-    private static int[] getValidNumbers(int[][] board, int row, int col) {
+    static int[] getValidNumbers(int[][] board, int row, int col) {
         boolean[] isValid = new boolean[10]; // 0-9, but we'll ignore 0
         for (int i = 1; i <= 9; i++) {
             isValid[i] = true;

@@ -10,6 +10,7 @@ Entering "q" at any time quits the program.
 
 ## Coming Soon
 
+- Color output
 - Main Menu
 - Score Stats saver/viewer
 - Timer
